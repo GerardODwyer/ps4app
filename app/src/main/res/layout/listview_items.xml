@@ -2,6 +2,7 @@
 <android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back"
     android:orientation="vertical">
 
 
@@ -10,6 +11,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
+        android:textColor="#ffffff"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
     <TextView
@@ -17,10 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+
         android:layout_toEndOf="@+id/list_thumb"
         android:layout_toRightOf="@+id/list_thumb"
         android:text="Title"
-        android:textColor="@android:color/holo_blue_dark"
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <TextView
@@ -29,6 +32,7 @@
         android:layout_height="wrap_content"
         android:text="ID"
         android:textSize="14sp"
+        android:textColor="#ffffff"
         android:layout_below="@+id/list_gameTitle"
         android:layout_toRightOf="@+id/list_thumb"
         android:layout_toEndOf="@+id/list_thumb" />
@@ -38,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="releaseDate"
+        android:textColor="#ffffff"
         android:textSize="14sp"
         android:layout_below="@+id/list_id"
         android:layout_toRightOf="@+id/list_thumb"

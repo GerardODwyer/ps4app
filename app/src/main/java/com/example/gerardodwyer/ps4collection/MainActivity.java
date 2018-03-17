@@ -24,12 +24,11 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-private Button button;
-
+    private Button button;
+    private Button disclaimer;
     private TextView mTextView;
     private ListView listView;
     private RequestQueue mQueue;
-
     private ArrayList<Games> gameList = new ArrayList<>();
 
 
@@ -38,13 +37,21 @@ private Button button;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.showall);
+        button = (Button) findViewById(R.id.openDoc);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity2();
+
             }
         });
+
+
+        configureButton();
+
+
+
+
+
 
 
 //        mTextView = findViewById(R.id.textView_result);
@@ -57,23 +64,36 @@ private Button button;
 
         mQueue = Volley.newRequestQueue(this);
 
-        jsonParse();
+
 
         buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                jsonParse();
 
-                populateListView();
+
             }
         });
 
 
     }
 public void openActivity2(){
-        Intent intent =new Intent(this, Activity2.class);
-        startActivity(intent);
+
+    startActivity(new Intent(MainActivity.this, Activity2.class));
 }
+
+    private void configureButton() {
+
+        Button disclaimer= (Button)findViewById(R.id.disclaimerScreen);
+        disclaimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Disclaimer.class));
+
+            }
+        });
+    }
 
     private void jsonParse() {
         String url = "https://pastebin.com/raw/q3BxPULM/";
@@ -107,7 +127,7 @@ public void openActivity2(){
                                 Games game = new Games(id, gameTitle, releaseDate, thumb);
                                 gameList.add(game);
 
-
+                                populateListView();
 //                                boxart = (ImageView)findViewById(R.id.list_thumb);
 //                                loadImageFromUrl(imageURLStart);
 
@@ -130,6 +150,8 @@ public void openActivity2(){
 
         CustomAdapter myCustomAdapter = new CustomAdapter(MainActivity.this, gameList);
         listView.setAdapter(myCustomAdapter);
+
+//        openActivity2();
     }
 
 //    private void loadImageFromUrl(String imageURL) {
