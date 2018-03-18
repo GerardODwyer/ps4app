@@ -1,10 +1,11 @@
 package com.example.gerardodwyer.ps4collection;
 
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.annotation.SuppressLint;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ListView;
 
@@ -21,18 +22,19 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class Activity2 extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
 
     private ListView listView;
     private RequestQueue mQueue;
-    private ArrayList<Games> gameList = new ArrayList<>();
+    private String searchString = "Fallout 4";
+    private ArrayList<Games> gameListSearch = new ArrayList<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.activity_search);
 
         mQueue = Volley.newRequestQueue(this);
         listView = findViewById(R.id.listView_result);
@@ -71,10 +73,18 @@ public class Activity2 extends AppCompatActivity {
                                 thumb = "http://thegamesdb.net/banners/" + thumb;
 
 
-                                Games game = new Games(id, gameTitle, releaseDate, thumb);
-                                gameList.add(game);
+                                Games gameslist = new Games(id, gameTitle, releaseDate, thumb);
+                                gameListSearch.add(gameslist);
+
+
+
+                                Games game = gameListSearch.get(i);
+                                if(game.getGameTitle().contains(searchString)){
+                                    gameListSearch.get(i);
+                                }
 
                                 populateListView();
+
 //                                boxart = (ImageView)findViewById(R.id.list_thumb);
 //                                loadImageFromUrl(imageURLStart);
 
@@ -95,10 +105,8 @@ public class Activity2 extends AppCompatActivity {
 
     private void populateListView() {
 
-        CustomAdapter myCustomAdapter = new CustomAdapter(Activity2.this, gameList);
+        CustomAdapter myCustomAdapter = new CustomAdapter(SearchActivity.this, gameListSearch);
         listView.setAdapter(myCustomAdapter);
     }
 
-    }
-
-
+}

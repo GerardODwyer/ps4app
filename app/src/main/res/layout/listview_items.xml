@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back"
-    android:orientation="vertical">
+    android:background="@drawable/newback"
+    android:orientation="vertical" >
 
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentLeft="true"
-        android:textColor="#ffffff"
+        android:textColor="@android:color/white"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true" />
     <TextView
@@ -19,12 +20,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-
         android:layout_toEndOf="@+id/list_thumb"
         android:layout_toRightOf="@+id/list_thumb"
         android:text="Title"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="27sp" />
 
     <TextView
         android:id="@+id/list_id"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="ID"
         android:textSize="14sp"
-        android:textColor="#ffffff"
+        android:textColor="@android:color/white"
         android:layout_below="@+id/list_gameTitle"
         android:layout_toRightOf="@+id/list_thumb"
         android:layout_toEndOf="@+id/list_thumb" />
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="releaseDate"
-        android:textColor="#ffffff"
+        android:textColor="@android:color/white"
         android:textSize="14sp"
         android:layout_below="@+id/list_id"
         android:layout_toRightOf="@+id/list_thumb"

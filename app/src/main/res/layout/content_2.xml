@@ -8,7 +8,6 @@
     android:paddingTop="10dp"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:background="@drawable/back"
     tools:context="com.example.gerardodwyer.ps4collection.MainActivity">
 
 

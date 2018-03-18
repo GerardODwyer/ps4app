@@ -24,12 +24,6 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button button;
-    private Button disclaimer;
-    private TextView mTextView;
-    private ListView listView;
-    private RequestQueue mQueue;
-    private ArrayList<Games> gameList = new ArrayList<>();
 
 
     @Override
@@ -37,55 +31,31 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.openDoc);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
+        disclaimerButton();
+        showGamesButton();
+        searchGamesButton();
+        //openDocButton();   -Load in OpenDoc Method (onCreate)
 
-
-        configureButton();
-
-
-
-
-
-
-
-//        mTextView = findViewById(R.id.textView_result);
-        Button buttonParse = findViewById(R.id.button_parse);
-
-        listView = findViewById(R.id.listView_result);
-
-//        boxart = findViewById(R.id.list_thumb);
-
-
-        mQueue = Volley.newRequestQueue(this);
-
-
-
-        buttonParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                jsonParse();
-
-
-            }
-        });
-
+//      boxart = findViewById(R.id.list_thumb);
 
     }
-public void openActivity2(){
 
-    startActivity(new Intent(MainActivity.this, Activity2.class));
-}
+    private void showGamesButton() {
 
-    private void configureButton() {
+        Button showGamesButton = (Button)findViewById(R.id.showGamesButton);
+        showGamesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Activity2.class));
 
-        Button disclaimer= (Button)findViewById(R.id.disclaimerScreen);
+            }
+        });
+    }
+
+    private void disclaimerButton() {
+
+        Button disclaimer= (Button)findViewById(R.id.disclaimerButton);
         disclaimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -95,64 +65,38 @@ public void openActivity2(){
         });
     }
 
-    private void jsonParse() {
-        String url = "https://pastebin.com/raw/q3BxPULM/";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("Game");
+    private void searchGamesButton() {
 
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject games = jsonArray.getJSONObject(i);
-
-                                String id = games.getString("id");
-                                String gameTitle = games.getString("GameTitle");
-                                String releaseDate = games.optString("ReleaseDate");
-                                String thumb = games.optString("thumb");
-
-                                if (releaseDate == "")
-                                {
-                                    releaseDate = "N/A";
-                                }
-                                if (thumb == "")
-                                {
-                                    thumb = "N/A";
-                                }
-
-                                thumb = "http://thegamesdb.net/banners/" + thumb;
-
-
-                                Games game = new Games(id, gameTitle, releaseDate, thumb);
-                                gameList.add(game);
-
-                                populateListView();
-//                                boxart = (ImageView)findViewById(R.id.list_thumb);
-//                                loadImageFromUrl(imageURLStart);
-
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
+        Button disclaimer= (Button)findViewById(R.id.searchGamesButton);
+        disclaimer.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
+
             }
         });
-
-        mQueue.add(request);
     }
 
-    private void populateListView() {
 
-        CustomAdapter myCustomAdapter = new CustomAdapter(MainActivity.this, gameList);
-        listView.setAdapter(myCustomAdapter);
+    //----Method For OpenDoc Button
 
-//        openActivity2();
-    }
+//    private void openDocButton() {
+//
+//        Button openDocButton = (Button)findViewById(R.id.openDoc);
+//        openDocButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(MainActivity.this, Content2.class));
+//
+//            }
+//        });
+//    }
+
+
+
+
+    //---Picasso Image Loader
+
 
 //    private void loadImageFromUrl(String imageURL) {
 //        Picasso.with(this).load(imageURL).placeholder(R.mipmap.ic_launcher)

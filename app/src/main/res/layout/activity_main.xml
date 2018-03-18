@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.widget.RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="10dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    android:background="@drawable/back"
+    android:background="@drawable/newback"
     tools:context="com.example.gerardodwyer.ps4collection.MainActivity">
 
 
@@ -18,48 +16,79 @@
         <!--android:textSize="20sp"-->
         <!--android:textColor="@android:color/black" />-->
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="237dp"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_alignTop="@+id/disclaimerButton"
+        app:srcCompat="@drawable/logo" />
+
     <Button
-        android:id="@+id/button_parse"
+        android:id="@+id/showGamesButton"
         android:layout_width="125dp"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="15dp"
         android:text="Show All Games"
-        android:textColor="@android:color/background_light" />
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/openDoc"
-        android:layout_width="125dp"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:textColor="@android:color/background_light"
-        android:text="open new doc" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="125dp"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
-        android:text="disclaimer"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_above="@+id/searchGamesButton"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_marginBottom="11dp"
+        android:background="@android:drawable/ic_menu_add"
         android:textColor="@android:color/background_light" />
 
+    <Button
+        android:id="@+id/disclaimerButton"
+        android:layout_width="75dp"
+        android:layout_height="65dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/ic_menu_help"
+        android:textColor="@android:color/background_light" />
 
+    <Button
+        android:id="@+id/searchGamesButton"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignEnd="@+id/imageView4"
+        android:layout_alignRight="@+id/imageView4"
+        android:background="@android:drawable/ic_menu_search" />
 
-
-    <ListView
-        android:id="@+id/listView_result"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_parse"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="42dp" />
+        android:layout_below="@+id/imageView4"
+        android:layout_marginTop="34dp"
+        android:textColor="@android:color/white"
+        android:text="Hello! this app is desined to help those who wish to explore the vast variaty of games playstation have to offer"
+        android:textSize="18sp" />
 
 
+    <TextView
+        android:id="@+id/textViewMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="25dp"
+        android:text="this app is curently under heavy development as some feature have as yet not been impimented,more to come soon!"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
 
 </android.widget.RelativeLayout>
 
