@@ -13,7 +13,7 @@ README
   
  ### App Functionality ###
  this app will have several functions the main being a functioning database for playstation games 
- so a user can check what games would they have and do not have
+ so a user can check what games they have and do not have
  
   * contain a home screen with relevent information
   * contain a button which will show all games 
@@ -21,16 +21,15 @@ README
   * show top ten games
   
   
-  
-  
+ 
   
  ### TODO ###
   * show top ten games
-  * fix layout(prepare home screen)
-  * desplay increase ie. more colour
   * images wont display
   
  
- 
+ ### Bugs ###
+ *images wont load
+ *search function occationaly crashes the app
  
  
