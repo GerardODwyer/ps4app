@@ -85,7 +85,7 @@ public class SearchActivity extends AppCompatActivity {
 
                                 populateListView();
 
-//                                boxart = (ImageView)findViewById(R.id.list_thumb);
+//                                 boxart = (ImageView)findViewById(R.id.list_thumb);
 //                                loadImageFromUrl(imageURLStart);
 
                             }

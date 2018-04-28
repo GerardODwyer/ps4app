@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newback"
+    android:background="#000f3d"
     tools:context="com.example.gerardodwyer.ps4collection.MainActivity" >
 
 

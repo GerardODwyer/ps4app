@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/newback"
+    android:background="#000f3d"
     tools:context="com.example.gerardodwyer.ps4collection.MainActivity">
 
 
@@ -20,9 +20,9 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="237dp"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_alignTop="@+id/disclaimerButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         app:srcCompat="@drawable/logo" />
 
     <Button
@@ -30,13 +30,13 @@
         android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:text="Show All Games"
         android:textColor="@android:color/black" />
 
     <Button
-        android:id="@+id/openDoc"
+        android:id="@+id/openDocButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
         android:layout_above="@+id/searchGamesButton"
@@ -89,6 +89,43 @@
         android:text="this app is curently under heavy development as some feature have as yet not been impimented,more to come soon!"
         android:textColor="@android:color/white"
         android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/bestGameButton"
+        android:layout_width="75dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:drawable/btn_star" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="75dp"
+        android:layout_height="65dp"
+        android:layout_alignBaseline="@+id/openDocButton"
+        android:layout_alignBottom="@+id/openDocButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:drawable/ic_menu_share" />
+
+    <Button
+        android:id="@+id/top10Button"
+        android:layout_width="75dp"
+        android:layout_height="65dp"
+        android:layout_above="@+id/textView"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4"
+        android:background="@drawable/no10" />
+
+    <Button
+        android:id="@+id/showMyGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="Show My Games" />
 
 </android.widget.RelativeLayout>
 

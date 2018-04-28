@@ -27,7 +27,11 @@
             android:name=".SearchActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_search"
-            android:theme="@style/FullscreenTheme"></activity>
+            android:theme="@style/FullscreenTheme" />
+        <activity android:name=".Top10Activity" />
+        <activity android:name=".BestGameActivity" />
+        <activity android:name=".MoreDetailsActivity" />
+        <activity android:name=".MyCollectionActivity"></activity>
     </application>
 
 </manifest>

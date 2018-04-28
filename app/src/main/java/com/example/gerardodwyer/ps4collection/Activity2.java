@@ -6,6 +6,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.android.volley.Request;
@@ -14,6 +16,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,14 +37,31 @@ public class Activity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
-
         mQueue = Volley.newRequestQueue(this);
         listView = findViewById(R.id.listView_result);
 
+        ArrayAdapter<Games> arrayAdapter = new ArrayAdapter<Games>(Activity2.this,
+                android.R.layout.simple_list_item_1, gameList);
+
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Games gameObj = (Games) listView.getAdapter().getItem(i);
+
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Games List/0");
+
+                myRef.setValue(gameObj
+                );
+
+
+            }
+        });
+
         jsonParseGames();
     }
-
-
 
     private void jsonParseGames() {
         String url = "https://pastebin.com/raw/q3BxPULM/";
@@ -59,12 +80,10 @@ public class Activity2 extends AppCompatActivity {
                                 String releaseDate = games.optString("ReleaseDate");
                                 String thumb = games.optString("thumb");
 
-                                if (releaseDate == "")
-                                {
+                                if (releaseDate == "") {
                                     releaseDate = "N/A";
                                 }
-                                if (thumb == "")
-                                {
+                                if (thumb == "") {
                                     thumb = "N/A";
                                 }
 
@@ -99,6 +118,6 @@ public class Activity2 extends AppCompatActivity {
         listView.setAdapter(myCustomAdapter);
     }
 
-    }
+}
 
 

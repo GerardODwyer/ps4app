@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1060952515220",
+    "firebase_url": "https://myps4collection.firebaseio.com",
+    "project_id": "myps4collection",
+    "storage_bucket": "myps4collection.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1060952515220:android:74ed0851c7584589",
+        "android_client_info": {
+          "package_name": "com.example.gerardodwyer.ps4collection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1060952515220-pjuvhu10jtn1e1be7v9f542u9af7tt5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gerardodwyer.ps4collection",
+            "certificate_hash": "62de777f1cb4d272fd59b6ffe84b81319a469681"
+          }
+        },
+        {
+          "client_id": "1060952515220-jhd513dkrf0nqp3pfjqdp9qj7382fqtj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvKRS56Cn55C7VVFZM7kLiUSopU95ncJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1060952515220-jhd513dkrf0nqp3pfjqdp9qj7382fqtj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

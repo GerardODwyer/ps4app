@@ -50,13 +50,18 @@ public class CustomAdapter extends BaseAdapter{
         TextView list_id = (TextView)view.findViewById(R.id.list_id);
         TextView list_gameTitle = (TextView)view.findViewById(R.id.list_gameTitle);
         TextView list_releaseDate = (TextView)view.findViewById(R.id.list_releaseDate);
-        TextView list_thumb = (TextView) view.findViewById(R.id.list_thumb);
+        ImageView list_thumb = (ImageView) view.findViewById(R.id.list_thumb);
 
 
         list_id.setText(tempGames.getId());
         list_gameTitle.setText(tempGames.getGameTitle());
         list_releaseDate.setText(tempGames.getReleaseDate());
-        list_thumb.setText(tempGames.getThumb());
+//        list_thumb.setImageDrawable(tempGames.getImage());
+
+        String URL = games.get(i).getThumb();
+
+        list_thumb.setTag(URL);
+        new DownloadImagesTask().execute(list_thumb);
 
         return view;
     }

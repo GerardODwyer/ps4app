@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000f3d"
+    tools:context="com.example.gerardodwyer.ps4collection.BestGameActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="203dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/gow" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="365dp"
+        android:layout_height="245dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="It takes a brave developer to entirely change the formula of a long-running, highly successful series. “If it ain’t broke, don’t fix it” rings true for many franchises. To change the fundamentals of a series risks upsetting a fanbase that may have been around for, at times, decades. For Sony Santa Monica to change the very fabric of God of War is a phenomenal gamble – but one that, for the most part, pays off.  God of War is superb, offering a stunningly detailed and lush world built with a level of detail that makes it wondrous to explore. It also has room to breath, allowing Kratos and Atreus’ roller-coaster relationship to build into something that can almost rival The Last of us  it still holds one of the most satisfying and entertaining combat systems in gaming."
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.939" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="388dp"
+        android:layout_height="43dp"
+        android:layout_margin="5dp"
+        android:text="GAME OF THE YEAR GOD OF WAR "
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+</android.support.constraint.ConstraintLayout>

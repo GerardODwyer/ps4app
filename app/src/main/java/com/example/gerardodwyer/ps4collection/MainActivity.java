@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-
+//main class initialisess home screen and buttons
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         disclaimerButton();
         showGamesButton();
         searchGamesButton();
+        top10Button();
+        showMyGames();
+        openDocButton();
+        bestGameButton();
         //openDocButton();   -Load in OpenDoc Method (onCreate)
 
 //      boxart = findViewById(R.id.list_thumb);
@@ -77,20 +81,54 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void top10Button() {
+        Button top10 = (Button)findViewById(R.id.top10Button);
+        top10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, Top10Activity.class));
+
+            }
+        });
+    }
+    private void bestGameButton() {
+        Button bestgame = (Button)findViewById(R.id.bestGameButton);
+        bestgame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, BestGameActivity.class));
+
+            }
+        });
+  }
+
 
     //----Method For OpenDoc Button
 
-//    private void openDocButton() {
-//
-//        Button openDocButton = (Button)findViewById(R.id.openDoc);
-//        openDocButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this, Content2.class));
-//
-//            }
-//        });
-//    }
+   private void openDocButton() {
+
+       Button openDocButton = (Button)findViewById(R.id.openDocButton);
+       openDocButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MoreDetailsActivity.class));
+
+            }
+        });
+    }
+
+
+    private void  showMyGames() {
+
+        Button  showMyGames = (Button)findViewById(R.id.showMyGames);
+        showMyGames.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, MyCollectionActivity.class));
+
+            }
+        });
+    }
 
 
 
