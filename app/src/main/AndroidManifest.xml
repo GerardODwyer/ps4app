@@ -31,7 +31,8 @@
         <activity android:name=".Top10Activity" />
         <activity android:name=".BestGameActivity" />
         <activity android:name=".MoreDetailsActivity" />
-        <activity android:name=".MyCollectionActivity"></activity>
+        <activity android:name=".MyCollectionActivity" />
+        <activity android:name=".ShareActivity"></activity>
     </application>
 
 </manifest>

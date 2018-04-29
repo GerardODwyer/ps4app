@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ps4app-master - Copy.iml" filepath="$PROJECT_DIR$/ps4app-master - Copy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ps4app.iml" filepath="$PROJECT_DIR$/ps4app.iml" />
     </modules>
   </component>
 </project>

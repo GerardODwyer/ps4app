@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         showMyGames();
         openDocButton();
         bestGameButton();
+        shareButton();
         //openDocButton();   -Load in OpenDoc Method (onCreate)
 
 //      boxart = findViewById(R.id.list_thumb);
@@ -116,7 +117,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+//share button impliment at a later date
+private void shareButton() {
 
+    Button shareButton = (Button)findViewById(R.id.ShareActivity);
+    shareButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            startActivity(new Intent(MainActivity.this, ShareActivity.class));
+
+        }
+    });
+}
 
     private void  showMyGames() {
 

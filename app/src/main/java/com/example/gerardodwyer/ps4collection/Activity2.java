@@ -50,11 +50,16 @@ public class Activity2 extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Games gameObj = (Games) listView.getAdapter().getItem(i);
 
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("Games List/0");
+                String[] gameData = new String[4];
+                gameData[0] = gameObj.getId();
+                gameData[1] = gameObj.getGameTitle();
+                gameData[2] = gameObj.getReleaseDate();
+                gameData[3] = gameObj.getThumb();
 
-                myRef.setValue(gameObj
-                );
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = database.getReference("Games List/"+ gameData[0]);
+
+                myRef.setValue(gameObj);
 
 
             }
@@ -94,8 +99,6 @@ public class Activity2 extends AppCompatActivity {
                                 gameList.add(game);
 
                                 populateListView();
-//                                boxart = (ImageView)findViewById(R.id.list_thumb);
-//                                loadImageFromUrl(imageURLStart);
 
                             }
                         } catch (JSONException e) {
