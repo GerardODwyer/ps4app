@@ -19,16 +19,20 @@ README
   * contain a button which will show all games 
   * contain a disclaimer
   * show top ten games
+  * allow to search games
+  * allow to share through means of facebook and twitter
+  * show information on the game of the year
+ 
   
   
   
   
   
  ### TODO ###
-  * show top ten games
-  * fix layout(prepare home screen)
-  * desplay increase ie. more colour
-  * images wont display
+  * fix mycollection display games are added into firebase but do not display
+  * fix crash on search 
+  * repair social media link buttons
+  
   
  
  
