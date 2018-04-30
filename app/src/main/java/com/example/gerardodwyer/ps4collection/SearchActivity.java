@@ -36,77 +36,80 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        mQueue = Volley.newRequestQueue(this);
-        listView = findViewById(R.id.listView_result);
-
-        jsonParseGames();
     }
-
-
-
-    private void jsonParseGames() {
-        String url = "https://pastebin.com/raw/q3BxPULM/";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray jsonArray = response.getJSONArray("Game");
-
-                            for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject games = jsonArray.getJSONObject(i);
-
-                                String id = games.getString("id");
-                                String gameTitle = games.getString("GameTitle");
-                                String releaseDate = games.optString("ReleaseDate");
-                                String thumb = games.optString("thumb");
-
-                                if (releaseDate == "")
-                                {
-                                    releaseDate = "N/A";
-                                }
-                                if (thumb == "")
-                                {
-                                    thumb = "N/A";
-                                }
-
-                                thumb = "http://thegamesdb.net/banners/" + thumb;
-
-
-                                Games gameslist = new Games(id, gameTitle, releaseDate, thumb);
-                                gameListSearch.add(gameslist);
-
-
-
-                                Games game = gameListSearch.get(i);
-                                if(game.getGameTitle().contains(searchString)){
-                                    gameListSearch.get(i);
-                                }
-
-                                populateListView();
-
-//                                 boxart = (ImageView)findViewById(R.id.list_thumb);
-//                                loadImageFromUrl(imageURLStart);
-
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-
-        mQueue.add(request);
-    }
-
-    private void populateListView() {
-
-        CustomAdapter myCustomAdapter = new CustomAdapter(SearchActivity.this, gameListSearch);
-        listView.setAdapter(myCustomAdapter);
-    }
-
 }
+
+//        mQueue = Volley.newRequestQueue(this);
+//        listView = findViewById(R.id.listView_result);
+//
+//        jsonParseGames();
+//    }
+//
+//
+//
+//    private void jsonParseGames() {
+//        String url = "https://pastebin.com/raw/q3BxPULM/";
+//        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
+//                new Response.Listener<JSONObject>() {
+//                    @Override
+//                    public void onResponse(JSONObject response) {
+//                        try {
+//                            JSONArray jsonArray = response.getJSONArray("Game");
+//
+//                            for (int i = 0; i < jsonArray.length(); i++) {
+//                                JSONObject games = jsonArray.getJSONObject(i);
+//
+//                                String id = games.getString("id");
+//                                String gameTitle = games.getString("GameTitle");
+//                                String releaseDate = games.optString("ReleaseDate");
+//                                String thumb = games.optString("thumb");
+//
+//                                if (releaseDate == "")
+//                                {
+//                                    releaseDate = "N/A";
+//                                }
+//                                if (thumb == "")
+//                                {
+//                                    thumb = "N/A";
+//                                }
+//
+//                                thumb = "http://thegamesdb.net/banners/" + thumb;
+//
+//
+//                                Games gameslist = new Games(id, gameTitle, releaseDate, thumb);
+//                                gameListSearch.add(gameslist);
+//
+//
+//
+//                                Games game = gameListSearch.get(i);
+//                                if(game.getGameTitle().contains(searchString)){
+//                                    gameListSearch.get(i);
+//                                }
+//
+//                                populateListView();
+//
+////                                 boxart = (ImageView)findViewById(R.id.list_thumb);
+////                                loadImageFromUrl(imageURLStart);
+//
+//                            }
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                error.printStackTrace();
+//            }
+//        });
+//
+//        mQueue.add(request);
+//    }
+//
+//    private void populateListView() {
+//
+//        CustomAdapter myCustomAdapter = new CustomAdapter(SearchActivity.this, gameListSearch);
+//        listView.setAdapter(myCustomAdapter);
+//    }
+//
+//}

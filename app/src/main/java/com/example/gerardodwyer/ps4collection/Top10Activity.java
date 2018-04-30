@@ -27,10 +27,10 @@ public class Top10Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_2);
+        setContentView(R.layout.activity_top10);
 
         mQueue = Volley.newRequestQueue(this);
-        listView = findViewById(R.id.listView_result);
+        listView = findViewById(R.id.listView_top10);
 
         jsonParseGames();
     }

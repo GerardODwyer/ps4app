@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -38,7 +39,11 @@ public class Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_2);
         mQueue = Volley.newRequestQueue(this);
-        listView = findViewById(R.id.listView_result);
+        listView = findViewById(R.id.listView_res);
+
+        gameList.clear();
+
+        jsonParseGames();
 
         ArrayAdapter<Games> arrayAdapter = new ArrayAdapter<Games>(Activity2.this,
                 android.R.layout.simple_list_item_1, gameList);
@@ -61,11 +66,12 @@ public class Activity2 extends AppCompatActivity {
 
                 myRef.setValue(gameObj);
 
+                Toast.makeText(Activity2.this,"Game Added to List", Toast.LENGTH_SHORT).show();
+
 
             }
         });
 
-        jsonParseGames();
     }
 
     private void jsonParseGames() {

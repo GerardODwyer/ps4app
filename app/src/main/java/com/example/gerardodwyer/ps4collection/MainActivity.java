@@ -136,7 +136,7 @@ private void shareButton() {
         showMyGames.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MyCollectionActivity.class));
+                startActivity(new Intent(MainActivity.this, MyGamesCollection.class));
 
             }
         });

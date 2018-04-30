@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1060952515220-q12s8eu3ieeh1b01vlkaesqec014mdag.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gerardodwyer.ps4collection",
+            "certificate_hash": "bb16e1e9180871b620065226d13fedcfded52e8b"
+          }
+        },
+        {
           "client_id": "1060952515220-pjuvhu10jtn1e1be7v9f542u9af7tt5o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
